@@ -7,7 +7,7 @@ import java.util.Formatter;
  * @author P. N. Hilfinger, with some modifications by Josh Hug and melaniecebula
  *         [Do not modify this file.]
  */
-public class IntList {
+public class  IntList {
     /**
      * First element of list.
      */
@@ -82,7 +82,12 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList res = A;
+        while (res.rest != null) {
+            res = res.rest;
+        }
+        res.rest = B;
+        return A;
     }
 
     /**
@@ -91,7 +96,13 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        if (A == null) {
+            if (B == null) {
+                return null;
+            }
+            return new IntList(B.first, catenate(A, B.rest));
+        }
+        return new IntList(A.first, catenate(A.rest, B));
     }
 
 
