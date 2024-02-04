@@ -97,7 +97,7 @@ public class ArrayDeque <T> {
 
     public T getLast() {
         int temp = nextLast;
-        temp += 1;
+        temp -= 1;
         if (temp < 0) {
             temp = (items.length - 1); //循环数组处理过界情况
         }
