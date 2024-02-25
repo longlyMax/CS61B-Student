@@ -46,9 +46,9 @@ public class RandomWorldDemo {
 
     public static void main(String[] args) {
         TERenderer ter = new TERenderer();
-        ter.initialize(WIDTH, HEIGHT);
+        ter.initialize(WIDTH, HEIGHT);//对世界进行初始化
 
-        TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];
+        TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];//得到二维数组
         fillWithRandomTiles(randomTiles);
 
         ter.renderFrame(randomTiles);
